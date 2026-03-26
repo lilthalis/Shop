@@ -1,50 +1,48 @@
 <!DOCTYPE html>
-<html lang="it"> <head>
+<html lang="it">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmic Playground | Sartoria Artigianale</title>
+    <title>Cosmic Playground | Sartoria di Lusso</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
+    <header class="maison-header">
         <nav>
-            <div class="menu-toggle">MENU</div> <div class="logo">
-                COSMIC PLAYGROUND
+            <div class="menu-btn" id="openMenu">MENU</div>
+            <div class="brand">
+                <h1>COSMIC PLAYGROUND</h1>
                 <small>MILANO • EST. 2026</small>
             </div>
-            <div class="nav-icons">
-                <span class="search-icon">CERCA</span> <span class="account">PROFILO</span>
-            </div>
+            <div class="nav-right">PROFILO</div>
         </nav>
-        <div id="side-menu" class="menu-overlay">
-    <a href="javascript:void(0)" class="close-btn">&times;</a>
-    <div class="menu-content">
-        <small>LA MAISON</small>
-        <a href="#">COLLEZIONI</a>
-        <a href="#">SU MISURA</a>
-        <a href="#">SARTORIA</a>
-        <a href="#">UNIVERSO COSMIC</a>
-        <hr>
-        <a href="#" class="menu-sublink">CONTATTI</a>
-    </div>
-</div>
     </header>
 
+    <div id="sideMenu" class="overlay">
+        <button class="close-btn" id="closeMenu">&times;</button>
+        <div class="overlay-content">
+            <span class="menu-label">LA COLLEZIONE</span>
+            <a href="#">PEZZI UNICI</a>
+            <a href="#">SU MISURA</a>
+            <a href="#">L'ATELIER</a>
+            <a href="#">CONTATTI</a>
+        </div>
+    </div>
+
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <span class="collection-tag">COLLEZIONE ESCLUSIVA • 01</span>
-                <h1>LA DUFFEL COSMICA</h1> <p>Ove il lusso incontra l'infinito.</p> <div class="cta-group">
-                    <a href="#" class="btn-discover">SCOPRI LA CREAZIONE</a> <a href="#" class="btn-tailor">SU MISURA</a> </div>
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-info">
+                <span class="fade-in">NUOVA COLLEZIONE</span>
+                <h2 class="fade-in">LA DUFFEL COSMICA</h2>
+                <p class="fade-in">L'essenza del viaggio italiano.</p>
+                <a href="#" class="btn-gold fade-in">SCOPRI DI PIÙ</a>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>Cosmic Playground © 2026 | Fatto a Mano in Italia</p>
-    </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
