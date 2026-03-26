@@ -32,3 +32,18 @@ window.addEventListener('DOMContentLoaded', () => {
         title.style.transform = 'translateY(0)';
     }, 500);
 });
+
+// Seleciona os elementos
+const menuBtn = document.querySelector('.menu-toggle');
+const closeBtn = document.querySelector('.close-btn');
+const sideMenu = document.getElementById('side-menu');
+
+// Função para abrir o menu
+menuBtn.addEventListener('click', () => {
+    sideMenu.style.width = "100%"; // Ocupa a tela toda estilo Gucci
+});
+
+// Função para fechar o menu
+closeBtn.addEventListener('click', () => {
+    sideMenu.style.width = "0";
+});
