@@ -1,152 +1,105 @@
-/* Reset e Tipografia */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: #FDFCF9; /* Cor de mármore limpo */
+    background-color: #1a1a1a; /* Fundo escuro luxuoso */
     font-family: 'Bodoni Moda', serif;
-    color: #1a1a1a;
-    overflow-x: hidden;
 }
 
-/* Header de Luxo */
-.maison-header {
-    position: fixed;
-    top: 0;
+/* Header Estilo Gucci */
+.gucci-nav {
     width: 100%;
-    padding: 30px 50px;
+    position: fixed;
     z-index: 100;
-    background: rgba(253, 252, 249, 0.8);
-    backdrop-filter: blur(10px);
+    background: white;
+    border-bottom: 3px solid #C5B358; /* Linha de ouro */
+}
+
+.top-bar {
+    background: #1a1a1a;
+    color: #C5B358;
+    text-align: center;
+    font-size: 10px;
+    padding: 5px 0;
+    letter-spacing: 2px;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 40px;
 }
 
-.menu-btn {
-    cursor: pointer;
-    letter-spacing: 3px;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.brand {
-    text-align: center;
-}
-
-.brand h1 {
-    font-size: 22px;
+.logo-area h1 {
+    font-size: 24px;
     letter-spacing: 8px;
-    font-weight: 400;
+    font-weight: 700;
 }
 
-.brand small {
-    font-size: 9px;
-    letter-spacing: 4px;
-    color: #C5B358; /* Dourado */
+.logo-area span {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 5px;
 }
 
-/* Menu Overlay */
-.overlay {
+/* Hero Section com Moldura */
+.hero-gucci {
+    height: 100vh;
+    padding: 100px 40px 40px 40px; /* Espaço para a moldura */
+}
+
+.hero-border {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #C5B358; /* Moldura fina dourada */
+    background: url('SUA_FOTO_AQUI.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-inner {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px 60px;
+    text-align: center;
+    border: 1px solid #1a1a1a;
+}
+
+.hero-inner h2 {
+    font-size: 40px;
+    letter-spacing: 5px;
+    margin: 15px 0;
+}
+
+.btn-dark {
+    background: #1a1a1a;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* Menu Lateral */
+.gucci-menu {
     height: 100%;
     width: 0;
     position: fixed;
+    top: 0; left: 0;
+    background: white;
     z-index: 1000;
-    top: 0;
-    left: 0;
-    background-color: #fff;
+    transition: 0.5s;
     overflow-x: hidden;
-    transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding-top: 100px;
 }
 
-.overlay-content {
-    text-align: center;
-}
-
-.menu-label {
-    color: #C5B358;
-    letter-spacing: 5px;
-    font-size: 11px;
+.menu-links a {
     display: block;
-    margin-bottom: 30px;
-}
-
-.overlay-content a {
-    display: block;
-    font-size: 40px;
-    text-decoration: none;
+    padding: 20px 40px;
+    font-size: 25px;
     color: #1a1a1a;
-    margin: 20px 0;
-    letter-spacing: 5px;
-    transition: 0.3s;
-}
-
-.overlay-content a:hover {
-    font-style: italic;
-    transform: scale(1.05);
-}
-
-.close-btn {
-    position: absolute;
-    top: 40px;
-    left: 50px;
-    font-size: 60px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-/* Hero Section */
-.hero-section {
-    height: 100vh;
-    background: url('SUA_IMAGEM.jpg') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.2);
-}
-
-.hero-info {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: #fff;
-}
-
-.hero-info h2 {
-    font-size: 70px;
-    letter-spacing: 15px;
-    font-weight: 300;
-    margin: 20px 0;
-}
-
-.btn-gold {
-    display: inline-block;
-    padding: 15px 40px;
-    border: 1px solid #fff;
-    color: #fff;
     text-decoration: none;
-    letter-spacing: 3px;
-    font-size: 12px;
-    transition: 0.4s;
-}
-
-.btn-gold:hover {
-    background: #fff;
-    color: #000;
+    border-bottom: 1px solid #eee;
 }

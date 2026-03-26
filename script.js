@@ -1,13 +1,7 @@
-const openMenu = document.getElementById('openMenu');
-const closeMenu = document.getElementById('closeMenu');
-const sideMenu = document.getElementById('sideMenu');
+document.getElementById('openMenu').onclick = function() {
+    document.getElementById('sideMenu').style.width = "350px";
+}
 
-// Abrir Menu
-openMenu.addEventListener('click', () => {
-    sideMenu.style.width = "100%";
-});
-
-// Fechar Menu
-closeMenu.addEventListener('click', () => {
-    sideMenu.style.width = "0%";
-});
+document.getElementById('closeMenu').onclick = function() {
+    document.getElementById('sideMenu').style.width = "0";
+}
