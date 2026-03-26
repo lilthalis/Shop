@@ -20,3 +20,15 @@ window.onload = () => {
     heroText.style.opacity = '1';
     heroText.style.transition = 'opacity 2s ease-in-out';
 };
+
+window.addEventListener('DOMContentLoaded', () => {
+    const title = document.querySelector('.hero-content h1');
+    title.style.opacity = '0';
+    title.style.transform = 'translateY(20px)';
+    
+    setTimeout(() => {
+        title.style.transition = 'all 1.5s ease-out';
+        title.style.opacity = '1';
+        title.style.transform = 'translateY(0)';
+    }, 500);
+});
