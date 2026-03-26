@@ -1,48 +1,84 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmic Playground | Sartoria di Lusso</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cosmic Playground</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/styles.css">
+
 </head>
+
 <body>
 
-    <header class="maison-header">
-        <nav>
-            <div class="menu-btn" id="openMenu">MENU</div>
-            <div class="brand">
-                <h1>COSMIC PLAYGROUND</h1>
-                <small>MILANO • EST. 2026</small>
-            </div>
-            <div class="nav-right">PROFILO</div>
-        </nav>
-    </header>
+<div class="topbar">
+SPEDIZIONE GRATUITA IN TUTTO IL MONDO
+</div>
 
-    <div id="sideMenu" class="overlay">
-        <button class="close-btn" id="closeMenu">&times;</button>
-        <div class="overlay-content">
-            <span class="menu-label">LA COLLEZIONE</span>
-            <a href="#">PEZZI UNICI</a>
-            <a href="#">SU MISURA</a>
-            <a href="#">L'ATELIER</a>
-            <a href="#">CONTATTI</a>
-        </div>
+<header>
+  <nav class="nav">
+    <div class="menu-btn" id="openMenu">MENU</div>
+    <div class="logo">COSMIC PLAYGROUND</div>
+    <div>PROFILO</div>
+  </nav>
+</header>
+
+<!-- MENU -->
+<div class="menu-overlay" id="menu">
+  <ul>
+    <li>Collezioni</li>
+    <li>Su Misura</li>
+    <li>Sartoria</li>
+    <li>L'Atelier</li>
+    <li>Contatti</li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-frame">
+    <div class="hero-image">
+      <div class="hero-box">
+        <h1>LA DUFFEL COSMICA</h1>
+        <p>L'essenza del viaggio italiano.</p>
+        <button class="btn">SCOPRI DI PIÙ</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">NUOVA COLLEZIONE</h2>
+
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?q=80&w=1200">
+      <h3>PELLETTERIA</h3>
     </div>
 
-    <main>
-        <section class="hero-section">
-            <div class="hero-overlay"></div>
-            <div class="hero-info">
-                <span class="fade-in">NUOVA COLLEZIONE</span>
-                <h2 class="fade-in">LA DUFFEL COSMICA</h2>
-                <p class="fade-in">L'essenza del viaggio italiano.</p>
-                <a href="#" class="btn-gold fade-in">SCOPRI DI PIÙ</a>
-            </div>
-        </section>
-    </main>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=1200">
+      <h3>SARTORIA</h3>
+    </div>
 
-    <script src="script.js"></script>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1520975698519-59c6b8b7d3f7?q=80&w=1200">
+      <h3>ACCESSORI</h3>
+    </div>
+  </div>
+</section>
+
+<footer>
+MILANO · EST. 2026 — COSMIC PLAYGROUND
+</footer>
+
+<!-- JS -->
+<script src="js/main.js"></script>
+
 </body>
 </html>

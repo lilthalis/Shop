@@ -1,105 +1,186 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+:root{
+  --ivory:#FDFCF9;
+  --gold:#C5B358;
+  --anthracite:#1a1a1a;
 
-body {
-    background-color: #1a1a1a; /* Fundo escuro luxuoso */
-    font-family: 'Bodoni Moda', serif;
+  --transition-smooth:cubic-bezier(.77,0,.18,1);
 }
 
-/* Header Estilo Gucci */
-.gucci-nav {
-    width: 100%;
-    position: fixed;
-    z-index: 100;
-    background: white;
-    border-bottom: 3px solid #C5B358; /* Linha de ouro */
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-.top-bar {
-    background: #1a1a1a;
-    color: #C5B358;
-    text-align: center;
-    font-size: 10px;
-    padding: 5px 0;
-    letter-spacing: 2px;
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--ivory);
+  color:var(--anthracite);
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
+/* TOPBAR */
+.topbar{
+  background:var(--anthracite);
+  color:white;
+  text-align:center;
+  font-size:.75rem;
+  letter-spacing:2px;
+  padding:6px 0;
 }
 
-.logo-area h1 {
-    font-size: 24px;
-    letter-spacing: 8px;
-    font-weight: 700;
+/* HEADER */
+header{
+  position:fixed;
+  top:26px;
+  width:100%;
+  backdrop-filter:blur(14px);
+  background:rgba(253,252,249,0.6);
+  border-bottom:1px solid rgba(0,0,0,0.05);
+  z-index:1000;
 }
 
-.logo-area span {
-    display: block;
-    text-align: center;
-    font-size: 10px;
-    letter-spacing: 5px;
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 60px;
 }
 
-/* Hero Section com Moldura */
-.hero-gucci {
-    height: 100vh;
-    padding: 100px 40px 40px 40px; /* Espaço para a moldura */
+.logo{
+  font-family:'Bodoni Moda',serif;
+  letter-spacing:8px;
 }
 
-.hero-border {
-    width: 100%;
-    height: 100%;
-    border: 1px solid #C5B358; /* Moldura fina dourada */
-    background: url('SUA_FOTO_AQUI.jpg') center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+.menu-btn{
+  cursor:pointer;
+  letter-spacing:3px;
 }
 
-.hero-inner {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 40px 60px;
-    text-align: center;
-    border: 1px solid #1a1a1a;
+/* MENU OVERLAY */
+.menu-overlay{
+  position:fixed;
+  inset:0;
+  background:var(--ivory);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  transform:translateY(-100%);
+  transition:transform .6s var(--transition-smooth);
 }
 
-.hero-inner h2 {
-    font-size: 40px;
-    letter-spacing: 5px;
-    margin: 15px 0;
+.menu-overlay.active{
+  transform:translateY(0);
 }
 
-.btn-dark {
-    background: #1a1a1a;
-    color: white;
-    padding: 12px 30px;
-    text-decoration: none;
-    font-size: 12px;
-    letter-spacing: 2px;
+.menu-overlay ul{
+  list-style:none;
+  text-align:center;
 }
 
-/* Menu Lateral */
-.gucci-menu {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0; left: 0;
-    background: white;
-    z-index: 1000;
-    transition: 0.5s;
-    overflow-x: hidden;
-    padding-top: 100px;
+.menu-overlay li{
+  font-family:'Bodoni Moda',serif;
+  font-size:3rem;
+  letter-spacing:8px;
+  margin:25px 0;
+  cursor:pointer;
 }
 
-.menu-links a {
-    display: block;
-    padding: 20px 40px;
-    font-size: 25px;
-    color: #1a1a1a;
-    text-decoration: none;
-    border-bottom: 1px solid #eee;
+.menu-overlay li:hover{
+  color:var(--gold);
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:120px 20px;
+}
+
+.hero-frame{
+  border:1px solid var(--gold);
+  padding:20px;
+  width:100%;
+  max-width:1200px;
+}
+
+.hero-image{
+  height:70vh;
+  background:url("https://images.unsplash.com/photo-1520975922284-9a9b2b9d3f6f?q=80&w=2000") center/cover;
+  position:relative;
+}
+
+.hero-box{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:rgba(253,252,249,0.75);
+  backdrop-filter:blur(10px);
+  padding:50px 70px;
+  text-align:center;
+}
+
+.hero h1{
+  font-family:'Bodoni Moda',serif;
+  letter-spacing:10px;
+}
+
+.btn{
+  border:1px solid var(--gold);
+  padding:12px 28px;
+  letter-spacing:3px;
+  background:none;
+  cursor:pointer;
+}
+
+.btn:hover{
+  background:var(--gold);
+  color:white;
+}
+
+/* GRID */
+section{
+  padding:120px 60px;
+}
+
+.section-title{
+  font-family:'Bodoni Moda',serif;
+  letter-spacing:8px;
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+}
+
+.card{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s var(--transition-smooth);
+}
+
+.card.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:60px;
+  letter-spacing:3px;
+  border-top:1px solid rgba(0,0,0,0.08);
 }
