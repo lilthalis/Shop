@@ -1,186 +1,158 @@
-:root{
-  --ivory:#FDFCF9;
-  --gold:#C5B358;
-  --anthracite:#1a1a1a;
-
-  --transition-smooth:cubic-bezier(.77,0,.18,1);
+:root {
+    --ivory: #FDFCF9;
+    --gold: #C5B358;
+    --anthracite: #111111;
+    --smooth: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-/* RESET */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-body{
-  font-family:'Inter',sans-serif;
-  background:var(--ivory);
-  color:var(--anthracite);
+body {
+    background: var(--ivory);
+    color: var(--anthracite);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* TOPBAR */
-.topbar{
-  background:var(--anthracite);
-  color:white;
-  text-align:center;
-  font-size:.75rem;
-  letter-spacing:2px;
-  padding:6px 0;
+.topbar {
+    background: var(--anthracite);
+    color: var(--gold);
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 3px;
+    padding: 8px 0;
+    font-weight: 700;
 }
 
-/* HEADER */
-header{
-  position:fixed;
-  top:26px;
-  width:100%;
-  backdrop-filter:blur(14px);
-  background:rgba(253,252,249,0.6);
-  border-bottom:1px solid rgba(0,0,0,0.05);
-  z-index:1000;
+/* HEADER DINÂMICO */
+header {
+    position: fixed;
+    top: 30px;
+    width: 100%;
+    z-index: 900;
+    transition: 0.4s;
 }
 
-.nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 60px;
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
 }
 
-.logo{
-  font-family:'Bodoni Moda',serif;
-  letter-spacing:8px;
+.logo {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.5rem;
+    letter-spacing: 10px;
+    font-weight: 700;
 }
 
-.menu-btn{
-  cursor:pointer;
-  letter-spacing:3px;
+/* BOTÃO MENU ESTRUTURADO */
+.menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
 }
+
+.menu-btn span {
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--anthracite);
+}
+
+/* HERO GIGANTE */
+.hero {
+    height: 100vh;
+    width: 100%;
+    background: url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2000') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    letter-spacing: 15px;
+    color: white;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.hero-content span {
+    color: var(--gold);
+    letter-spacing: 5px;
+    font-size: 14px;
+}
+
+/* GRID DE PRODUTOS */
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px; /* Linha fina estilo grife */
+    background: #eee;
+}
+
+.product-card {
+    background: var(--ivory);
+    padding: 60px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.p-img-box {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.p-img-box img {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    transition: 1s var(--smooth);
+}
+
+.product-card:hover img { transform: scale(1.05); }
 
 /* MENU OVERLAY */
-.menu-overlay{
-  position:fixed;
-  inset:0;
-  background:var(--ivory);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  transform:translateY(-100%);
-  transition:transform .6s var(--transition-smooth);
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: white;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-100%);
+    transition: 0.8s var(--smooth);
 }
 
-.menu-overlay.active{
-  transform:translateY(0);
+.menu-overlay.active { transform: translateX(0); }
+
+.menu-content ul { list-style: none; }
+.menu-content li a {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    text-decoration: none;
+    color: var(--anthracite);
+    display: block;
+    margin: 20px 0;
+    letter-spacing: 5px;
+    transition: 0.3s;
 }
 
-.menu-overlay ul{
-  list-style:none;
-  text-align:center;
-}
+.menu-content li a:hover { color: var(--gold); font-style: italic; }
 
-.menu-overlay li{
-  font-family:'Bodoni Moda',serif;
-  font-size:3rem;
-  letter-spacing:8px;
-  margin:25px 0;
-  cursor:pointer;
-}
-
-.menu-overlay li:hover{
-  color:var(--gold);
-}
-
-/* HERO */
-.hero{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:120px 20px;
-}
-
-.hero-frame{
-  border:1px solid var(--gold);
-  padding:20px;
-  width:100%;
-  max-width:1200px;
-}
-
-.hero-image{
-  height:70vh;
-  background:url("https://images.unsplash.com/photo-1520975922284-9a9b2b9d3f6f?q=80&w=2000") center/cover;
-  position:relative;
-}
-
-.hero-box{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  background:rgba(253,252,249,0.75);
-  backdrop-filter:blur(10px);
-  padding:50px 70px;
-  text-align:center;
-}
-
-.hero h1{
-  font-family:'Bodoni Moda',serif;
-  letter-spacing:10px;
-}
-
-.btn{
-  border:1px solid var(--gold);
-  padding:12px 28px;
-  letter-spacing:3px;
-  background:none;
-  cursor:pointer;
-}
-
-.btn:hover{
-  background:var(--gold);
-  color:white;
-}
-
-/* GRID */
-section{
-  padding:120px 60px;
-}
-
-.section-title{
-  font-family:'Bodoni Moda',serif;
-  letter-spacing:8px;
-  text-align:center;
-  margin-bottom:60px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:40px;
-}
-
-.card{
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s var(--transition-smooth);
-}
-
-.card.visible{
-  opacity:1;
-  transform:translateY(0);
-}
-
-.card img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:60px;
-  letter-spacing:3px;
-  border-top:1px solid rgba(0,0,0,0.08);
+/* RESPONSIVIDADE (CELULAR) */
+@media (max-width: 768px) {
+    .nav { padding: 20px; }
+    .logo { font-size: 0.9rem; letter-spacing: 4px; }
+    .product-grid { grid-template-columns: 1fr; }
+    .hero-content h1 { letter-spacing: 5px; }
+    .product-card { padding: 20px; }
 }
