@@ -4,72 +4,327 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>LILTHALIS — Casa di Moda</title>
+<title>Cosmic Playground — Casa Italiana</title>
 
-<link rel="stylesheet" href="css/styles.css">
+<!-- FONTI -->
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+
+/* =========================
+   VARIABILI LUXURY
+========================= */
+
+:root{
+  --ivory:#FDFCF9;
+  --gold:#C5B358;
+  --anthracite:#1a1a1a;
+}
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:var(--ivory);
+  color:var(--anthracite);
+  font-family:'Inter', sans-serif;
+  overflow-x:hidden;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+  text-align:center;
+  padding:8px;
+  font-size:12px;
+  letter-spacing:2px;
+  background:white;
+  border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  position:fixed;
+  width:100%;
+  top:32px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  backdrop-filter:blur(10px);
+  background:rgba(253,252,249,.6);
+  z-index:1000;
+}
+
+.logo{
+  font-family:'Bodoni Moda';
+  letter-spacing:8px;
+  font-size:20px;
+}
+
+.menu-btn{
+  cursor:pointer;
+  letter-spacing:3px;
+}
+
+/* =========================
+   FULLSCREEN MENU
+========================= */
+
+.menu{
+  position:fixed;
+  inset:0;
+  background:var(--ivory);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  transform:translateY(-100%);
+  transition:.6s cubic-bezier(.77,0,.18,1);
+}
+
+.menu.active{
+  transform:translateY(0);
+}
+
+.menu a{
+  font-family:'Bodoni Moda';
+  font-size:40px;
+  text-decoration:none;
+  color:var(--anthracite);
+  margin:15px 0;
+  letter-spacing:6px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px;
+}
+
+.hero-box{
+  border:1px solid var(--gold);
+  padding:80px;
+  background:rgba(255,255,255,.5);
+}
+
+.hero h1{
+  font-family:'Bodoni Moda';
+  font-size:56px;
+  letter-spacing:8px;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:18px;
+  margin-bottom:40px;
+}
+
+.hero button{
+  padding:14px 36px;
+  background:none;
+  border:1px solid var(--anthracite);
+  cursor:pointer;
+  letter-spacing:2px;
+  transition:.3s;
+}
+
+.hero button:hover{
+  background:var(--anthracite);
+  color:white;
+}
+
+/* =========================
+   COLLEZIONE
+========================= */
+
+.collection{
+  padding:120px 60px;
+  text-align:center;
+}
+
+.collection h2{
+  font-family:'Bodoni Moda';
+  font-size:42px;
+  letter-spacing:6px;
+  margin-bottom:60px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:40px;
+}
+
+.card img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+}
+
+.card p{
+  margin-top:15px;
+  letter-spacing:3px;
+}
+
+/* =========================
+   FILOSOFIA
+========================= */
+
+.about{
+  padding:120px 60px;
+  text-align:center;
+}
+
+.about h2{
+  font-family:'Bodoni Moda';
+  font-size:38px;
+  margin-bottom:30px;
+}
+
+.about p{
+  max-width:700px;
+  margin:auto;
+  line-height:1.7;
+  margin-bottom:40px;
+}
+
+.contact{
+  border:1px solid var(--anthracite);
+  padding:14px 30px;
+  text-decoration:none;
+  color:var(--anthracite);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  text-align:center;
+  padding:40px;
+  font-size:14px;
+  border-top:1px solid rgba(0,0,0,.1);
+}
+
+</style>
 </head>
 
 <body>
 
-<header class="header">
-  <div class="logo">LILTHALIS</div>
+<div class="topbar">
+SPEDIZIONE GRATUITA IN TUTTO IL MONDO
+</div>
 
-  <nav class="nav">
-    <a href="#">Casa</a>
-    <a href="#">Collezioni</a>
-    <a href="#">Borse</a>
-    <a href="#">Atelier</a>
-    <a href="#">Contatti</a>
-  </nav>
+<header>
+<div class="menu-btn" id="openMenu">MENU</div>
+<div class="logo">COSMIC PLAYGROUND</div>
+<div>PROFILO</div>
 </header>
 
+<!-- MENU -->
+<div class="menu" id="menu">
+<a href="#">Collezioni</a>
+<a href="#">Su Misura</a>
+<a href="#">Sartoria</a>
+<a href="#">L'Atelier</a>
+<a href="#">Contatti</a>
+</div>
+
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
-    <h1>Eleganza Senza Tempo</h1>
-    <p>Artigianato italiano. Pelle autentica. Identità moderna.</p>
-    <button>Scopri la Collezione</button>
+  <div class="hero-box">
+    <h1>LA DUFFEL COSMICA</h1>
+    <p>L'essenza del viaggio italiano.</p>
+    <button>SCOPRI</button>
   </div>
 </section>
 
+<!-- COLLEZIONE -->
 <section class="collection">
-  <h2>Nuova Collezione</h2>
+<h2>NUOVA COLLEZIONE</h2>
 
-  <div class="grid">
+<div class="grid">
 
-    <div class="card">
-      <img src="https://picsum.photos/500/600?1">
-      <p>Duffel Milano</p>
-    </div>
+<div class="card">
+<img src="https://picsum.photos/600/800?1">
+<p>Milano Duffel</p>
+</div>
 
-    <div class="card">
-      <img src="https://picsum.photos/500/600?2">
-      <p>Giacca Roma</p>
-    </div>
+<div class="card">
+<img src="https://picsum.photos/600/800?2">
+<p>Roma Leather</p>
+</div>
 
-    <div class="card">
-      <img src="https://picsum.photos/500/600?3">
-      <p>Borsa Firenze</p>
-    </div>
+<div class="card">
+<img src="https://picsum.photos/600/800?3">
+<p>Firenze Travel</p>
+</div>
 
-  </div>
+</div>
 </section>
 
+<!-- FILOSOFIA -->
 <section class="about">
-  <h2>La Filosofia</h2>
-  <p>
-    LILTHALIS nasce dall'incontro tra tradizione italiana e visione contemporanea.
-    Ogni creazione racconta un viaggio, un'identità e un'eleganza senza tempo.
-  </p>
+<h2>La Filosofia</h2>
+<p>
+Cosmic Playground nasce tra artigianato italiano e visione contemporanea.
+Ogni creazione racconta un viaggio, una storia e un'identità senza tempo.
+</p>
 
-  <a class="contact-btn" href="#">Entra in Contatto</a>
+<a href="#" class="contact">ENTRA IN CONTATTO</a>
 </section>
 
-<footer class="footer">
-  <p>© 2026 LILTHALIS — Artigianato Italiano</p>
+<footer>
+© 2026 Cosmic Playground — Milano
 </footer>
 
-<script src="js/main.js"></script>
+<script>
+
+/* MENU OVERLAY */
+const btn = document.getElementById("openMenu");
+const menu = document.getElementById("menu");
+
+btn.addEventListener("click",()=>{
+  menu.classList.toggle("active");
+});
+
+/* ANIMAÇÃO SCROLL */
+const elements = document.querySelectorAll(".card");
+
+window.addEventListener("scroll",()=>{
+  elements.forEach(el=>{
+    const pos = el.getBoundingClientRect().top;
+    if(pos < window.innerHeight - 100){
+      el.style.opacity = 1;
+      el.style.transform = "translateY(0)";
+    }
+  });
+});
+
+elements.forEach(el=>{
+  el.style.opacity=0;
+  el.style.transform="translateY(40px)";
+  el.style.transition="all .8s ease";
+});
+
+</script>
+
 </body>
 </html>
