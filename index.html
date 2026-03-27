@@ -1,330 +1,357 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Playground | Sartoria di Lusso</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
 
-<title>Cosmic Playground — Casa Italiana</title>
+    <style>
+        :root {
+            --ivory: #FDFCF9;
+            --gold: #C5B358;
+            --dark: #0f0f0f;
+            --smooth: cubic-bezier(0.77, 0, 0.175, 1);
+        }
 
-<!-- FONTI -->
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
 
-<style>
+        body {
+            background-color: var(--ivory);
+            color: var(--dark);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
 
-/* =========================
-   VARIABILI LUXURY
-========================= */
+        /* BARRA SUPERIOR */
+        .topbar {
+            background-color: var(--dark);
+            color: var(--gold);
+            text-align: center;
+            padding: 10px 0;
+            font-size: 10px;
+            letter-spacing: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
 
-:root{
-  --ivory:#FDFCF9;
-  --gold:#C5B358;
-  --anthracite:#1a1a1a;
-}
+        /* CABEÇALHO */
+        header {
+            width: 100%;
+            padding: 25px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute; /* Fica em cima da imagem */
+            top: 35px;
+            z-index: 100;
+        }
 
-/* RESET */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+        .menu-btn {
+            font-size: 13px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            color: white;
+            font-weight: 600;
+        }
 
-body{
-  background:var(--ivory);
-  color:var(--anthracite);
-  font-family:'Inter', sans-serif;
-  overflow-x:hidden;
-}
+        .logo h1 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 28px;
+            letter-spacing: 12px;
+            color: white;
+            text-align: center;
+            font-weight: 400;
+        }
 
-/* =========================
-   TOP BAR
-========================= */
+        .logo small {
+            display: block;
+            font-size: 9px;
+            letter-spacing: 6px;
+            color: var(--gold);
+            text-align: center;
+            margin-top: 5px;
+        }
 
-.topbar{
-  text-align:center;
-  padding:8px;
-  font-size:12px;
-  letter-spacing:2px;
-  background:white;
-  border-bottom:1px solid rgba(0,0,0,.05);
-}
+        .nav-right {
+            color: white;
+            font-size: 13px;
+            letter-spacing: 3px;
+        }
 
-/* =========================
-   HEADER
-========================= */
+        /* HERO SECTION (A Capa Gigante) */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1547941126-3d5322b218b0?q=80&w=2000') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
 
-header{
-  position:fixed;
-  width:100%;
-  top:32px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 60px;
-  backdrop-filter:blur(10px);
-  background:rgba(253,252,249,.6);
-  z-index:1000;
-}
+        .hero-content {
+            border: 1px solid rgba(197, 179, 88, 0.5); /* Borda dourada fina */
+            padding: 60px 80px;
+            background: rgba(15, 15, 15, 0.3);
+            backdrop-filter: blur(5px);
+        }
 
-.logo{
-  font-family:'Bodoni Moda';
-  letter-spacing:8px;
-  font-size:20px;
-}
+        .hero-content span {
+            color: var(--gold);
+            letter-spacing: 6px;
+            font-size: 11px;
+            display: block;
+            margin-bottom: 20px;
+        }
 
-.menu-btn{
-  cursor:pointer;
-  letter-spacing:3px;
-}
+        .hero-content h2 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 60px;
+            color: white;
+            letter-spacing: 10px;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
 
-/* =========================
-   FULLSCREEN MENU
-========================= */
+        .btn-luxury {
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 15px 40px;
+            font-size: 12px;
+            letter-spacing: 4px;
+            transition: 0.4s;
+            background: transparent;
+            cursor: pointer;
+        }
 
-.menu{
-  position:fixed;
-  inset:0;
-  background:var(--ivory);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  transform:translateY(-100%);
-  transition:.6s cubic-bezier(.77,0,.18,1);
-}
+        .btn-luxury:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
 
-.menu.active{
-  transform:translateY(0);
-}
+        /* SEÇÃO HISTÓRIA */
+        .story {
+            padding: 120px 10%;
+            text-align: center;
+            background-color: var(--ivory);
+        }
 
-.menu a{
-  font-family:'Bodoni Moda';
-  font-size:40px;
-  text-decoration:none;
-  color:var(--anthracite);
-  margin:15px 0;
-  letter-spacing:6px;
-}
+        .story h3 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 40px;
+            letter-spacing: 8px;
+            margin-bottom: 30px;
+        }
 
-/* =========================
-   HERO
-========================= */
+        .story p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 16px;
+            line-height: 2;
+            color: #444;
+        }
 
-.hero{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:40px;
-}
+        /* SEÇÃO COLEÇÃO */
+        .collection {
+            padding: 50px 10% 120px 10%;
+        }
 
-.hero-box{
-  border:1px solid var(--gold);
-  padding:80px;
-  background:rgba(255,255,255,.5);
-}
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
 
-.hero h1{
-  font-family:'Bodoni Moda';
-  font-size:56px;
-  letter-spacing:8px;
-  margin-bottom:20px;
-}
+        .item-card {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            text-align: center;
+        }
 
-.hero p{
-  font-size:18px;
-  margin-bottom:40px;
-}
+        .item-card img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
 
-.hero button{
-  padding:14px 36px;
-  background:none;
-  border:1px solid var(--anthracite);
-  cursor:pointer;
-  letter-spacing:2px;
-  transition:.3s;
-}
+        .item-card h4 {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 24px;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
 
-.hero button:hover{
-  background:var(--anthracite);
-  color:white;
-}
+        .item-card p {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #777;
+            margin-bottom: 20px;
+        }
 
-/* =========================
-   COLLEZIONE
-========================= */
+        .btn-dark {
+            background: var(--dark);
+            color: white;
+            padding: 12px 30px;
+            font-size: 11px;
+            letter-spacing: 3px;
+            display: inline-block;
+            border: 1px solid var(--dark);
+            transition: 0.4s;
+        }
 
-.collection{
-  padding:120px 60px;
-  text-align:center;
-}
+        .btn-dark:hover {
+            background: transparent;
+            color: var(--dark);
+        }
 
-.collection h2{
-  font-family:'Bodoni Moda';
-  font-size:42px;
-  letter-spacing:6px;
-  margin-bottom:60px;
-}
+        /* MENU OVERLAY (Tela Cheia) */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--ivory);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(-100%);
+            transition: transform 0.8s var(--smooth);
+        }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:40px;
-}
+        .menu-overlay.active {
+            transform: translateY(0);
+        }
 
-.card img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-}
+        .close-btn {
+            position: absolute;
+            top: 40px;
+            right: 50px;
+            font-size: 50px;
+            cursor: pointer;
+            color: var(--dark);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 200;
+        }
 
-.card p{
-  margin-top:15px;
-  letter-spacing:3px;
-}
+        .menu-links a {
+            display: block;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 45px;
+            color: var(--dark);
+            margin: 25px 0;
+            letter-spacing: 8px;
+            text-align: center;
+            transition: 0.3s;
+        }
 
-/* =========================
-   FILOSOFIA
-========================= */
+        .menu-links a:hover {
+            color: var(--gold);
+            font-style: italic;
+        }
 
-.about{
-  padding:120px 60px;
-  text-align:center;
-}
-
-.about h2{
-  font-family:'Bodoni Moda';
-  font-size:38px;
-  margin-bottom:30px;
-}
-
-.about p{
-  max-width:700px;
-  margin:auto;
-  line-height:1.7;
-  margin-bottom:40px;
-}
-
-.contact{
-  border:1px solid var(--anthracite);
-  padding:14px 30px;
-  text-decoration:none;
-  color:var(--anthracite);
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-  text-align:center;
-  padding:40px;
-  font-size:14px;
-  border-top:1px solid rgba(0,0,0,.1);
-}
-
-</style>
+        /* CELULAR (Responsivo) */
+        @media (max-width: 768px) {
+            header { padding: 20px; }
+            .logo h1 { font-size: 16px; letter-spacing: 6px; }
+            .logo small { font-size: 7px; }
+            .nav-right { display: none; }
+            .hero-content { padding: 30px 20px; width: 90%; }
+            .hero-content h2 { font-size: 35px; }
+            .grid { grid-template-columns: 1fr; }
+            .item-card img { height: 400px; }
+            .menu-links a { font-size: 30px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="topbar">
-SPEDIZIONE GRATUITA IN TUTTO IL MONDO
-</div>
+    <div class="topbar">SPEDIZIONE GRATUITA IN TUTTO IL MONDO</div>
 
-<header>
-<div class="menu-btn" id="openMenu">MENU</div>
-<div class="logo">COSMIC PLAYGROUND</div>
-<div>PROFILO</div>
-</header>
+    <header>
+        <div class="menu-btn" id="openMenu">MENU</div>
+        <div class="logo">
+            <h1>COSMIC PLAYGROUND</h1>
+            <small>MILANO • EST. 2026</small>
+        </div>
+        <div class="nav-right">CONTATTO</div>
+    </header>
 
-<!-- MENU -->
-<div class="menu" id="menu">
-<a href="#">Collezioni</a>
-<a href="#">Su Misura</a>
-<a href="#">Sartoria</a>
-<a href="#">L'Atelier</a>
-<a href="#">Contatti</a>
-</div>
+    <div class="menu-overlay" id="menu">
+        <div class="close-btn" id="closeMenu">&times;</div>
+        <div class="menu-links">
+            <a href="#">HOME</a>
+            <a href="#storia">LA MAISON</a>
+            <a href="#collezione">COLLEZIONI</a>
+            <a href="https://wa.me/seunumerousuarios">RICHIESTA PRIVATA</a>
+        </div>
+    </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-box">
-    <h1>LA DUFFEL COSMICA</h1>
-    <p>L'essenza del viaggio italiano.</p>
-    <button>SCOPRI</button>
-  </div>
-</section>
+    <div class="hero">
+        <div class="hero-content">
+            <span>SARTORIA ARTIGIANALE</span>
+            <h2>LA DUFFEL COSMICA</h2>
+            <button class="btn-luxury" onclick="window.location.href='#collezione'">SCOPRI LA CREAZIONE</button>
+        </div>
+    </div>
 
-<!-- COLLEZIONE -->
-<section class="collection">
-<h2>NUOVA COLLEZIONE</h2>
+    <div class="story" id="storia">
+        <h3>L'EREDITÀ DEL SANGUE</h3>
+        <p>Nascida do encontro entre a precisão métrica da alfaiataria italiana e a energia vibrante das quadras. A Cosmic Playground não é apenas uma marca, é o resultado de gerações de superação. Das ruas ao luxo eterno. Cada ponto no couro carrega a nossa história.</p>
+    </div>
 
-<div class="grid">
+    <div class="collection" id="collezione">
+        <div class="grid">
+            <div class="item-card">
+                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=800" alt="Bolsa de Couro">
+                <h4>LA DUFFEL COSMICA</h4>
+                <p>Pelle Pieno Fiore — Edizione Limitata 01/12</p>
+                <a href="https://wa.me/seunumerousuarios" class="btn-dark">RICHIESTA PRIVATA</a>
+            </div>
+            
+            <div class="item-card">
+                <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?q=80&w=800" alt="Basquete">
+                <h4>BALLER DI LUSSO</h4>
+                <p>Articolo d'Arte — Esclusività Assoluta</p>
+                <a href="https://wa.me/seunumerousuarios" class="btn-dark">RICHIESTA PRIVATA</a>
+            </div>
+        </div>
+    </div>
 
-<div class="card">
-<img src="https://picsum.photos/600/800?1">
-<p>Milano Duffel</p>
-</div>
+    <script>
+        // Funcionalidade do Menu
+        const menu = document.getElementById('menu');
+        const openBtn = document.getElementById('openMenu');
+        const closeBtn = document.getElementById('closeMenu');
+        const links = document.querySelectorAll('.menu-links a');
 
-<div class="card">
-<img src="https://picsum.photos/600/800?2">
-<p>Roma Leather</p>
-</div>
+        // Abre o menu
+        openBtn.addEventListener('click', () => {
+            menu.classList.add('active');
+        });
 
-<div class="card">
-<img src="https://picsum.photos/600/800?3">
-<p>Firenze Travel</p>
-</div>
+        // Fecha o menu no X
+        closeBtn.addEventListener('click', () => {
+            menu.classList.remove('active');
+        });
 
-</div>
-</section>
-
-<!-- FILOSOFIA -->
-<section class="about">
-<h2>La Filosofia</h2>
-<p>
-Cosmic Playground nasce tra artigianato italiano e visione contemporanea.
-Ogni creazione racconta un viaggio, una storia e un'identità senza tempo.
-</p>
-
-<a href="#" class="contact">ENTRA IN CONTATTO</a>
-</section>
-
-<footer>
-© 2026 Cosmic Playground — Milano
-</footer>
-
-<script>
-
-/* MENU OVERLAY */
-const btn = document.getElementById("openMenu");
-const menu = document.getElementById("menu");
-
-btn.addEventListener("click",()=>{
-  menu.classList.toggle("active");
-});
-
-/* ANIMAÇÃO SCROLL */
-const elements = document.querySelectorAll(".card");
-
-window.addEventListener("scroll",()=>{
-  elements.forEach(el=>{
-    const pos = el.getBoundingClientRect().top;
-    if(pos < window.innerHeight - 100){
-      el.style.opacity = 1;
-      el.style.transform = "translateY(0)";
-    }
-  });
-});
-
-elements.forEach(el=>{
-  el.style.opacity=0;
-  el.style.transform="translateY(40px)";
-  el.style.transition="all .8s ease";
-});
-
-</script>
+        // Fecha o menu quando clica em um link
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
